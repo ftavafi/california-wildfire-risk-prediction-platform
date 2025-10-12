@@ -8,6 +8,10 @@
 
 ## 🎯 Project Overview
 
+**Personal Motivation**: In January 2025, I was living in West Hollywood when the wildfire broke out in the Hollywood Hills. Half of my building received evacuation orders, and my family and I packed our car with essentials, ready to flee at any moment. It was terrifying—watching neighbors scrambling with whatever they could carry, children crying, elderly residents needing help to evacuate, not knowing if any of us would have homes to return to. The fire eventually damaged and destroyed several homes in the area, displacing families and even impacting major events like the Oscar nominations.
+
+As a data scientist standing there with our car packed, I kept thinking: "We have all this data—weather patterns, historical fires, satellite imagery—why can't we predict this better? Why are we always reacting instead of preparing?" That experience drove me to build this platform. The idea is simple but critical: if communities had reliable 7-30 day wildfire risk predictions, families could prepare their properties, secure important documents, coordinate with vulnerable neighbors, and evacuate safely—not in panic, but with a plan.
+
 California faces increasing wildfire threats due to climate change, with devastating consequences for communities, ecosystems, and infrastructure. This platform leverages machine learning and real-time data to predict wildfire risk 7-30 days in advance, enabling:
 
 - **Early warning systems** for fire departments and emergency services
@@ -209,7 +213,9 @@ california-wildfire-risk-prediction-platform/
 
 ## 🤝 Contributing
 
-This is currently a portfolio project in active development. Contributions, suggestions, and feedback are welcome!
+This is a personal passion project born from experiencing the January 2025 Hollywood Hills fire evacuations firsthand. Standing with my car packed, watching neighbors evacuate, uncertain if we'd lose our homes—that experience showed me the urgent need for better wildfire prediction tools. As a data scientist, I'm committed to using my skills to ensure other families never have to experience that same fear and uncertainty without warning. While currently in active development, I'm exploring ways to make this tool freely accessible to California residents, emergency responders, and community organizations who need it most.
+
+Contributions, suggestions, and collaboration opportunities are welcome!
 
 ## 📄 License
 
@@ -245,4 +251,4 @@ For questions, collaborations, or opportunities, please reach out via:
 
 ---
 
-*Last Updated: October 2025*
+*Last Updated: January 2025*
