@@ -230,16 +230,16 @@ def main():
     # Step 2: Get available datasets
     datasets = get_datasets()
     
-    # Step 3: Download weather data year by year (2020-2024)
+    # Step 3: Download weather data year by year (2020-2025)
     print("\n" + "=" * 80)
-    print("DOWNLOADING DATA (2020-2024) - YEAR BY YEAR")
+    print("DOWNLOADING DATA (2020-2025) - YEAR BY YEAR")
     print("This approach downloads in yearly chunks to avoid API rate limits")
     print("=" * 80)
     
     weather_data = download_weather_data_yearly(
         dataset_id='GHCND',  # Daily data
         start_year=2020,
-        end_year=2024
+        end_year=2025
     )
     
     print("\n" + "=" * 80)
