@@ -60,11 +60,21 @@ def download_census_data(year, data_dir):
         base_url = "https://api.census.gov/data/2022/acs/acs5"
         variables = "B01003_001E,B01001_002E,B01001_026E"  # Total population, Male, Female
         dataset = "acs/acs5"
-    else:
-        # Use Decennial Census for 2000 and 2010
-        base_url = f"https://api.census.gov/data/{year}/dec/pl"
+    elif year == 2000:
+        # Use Decennial Census for 2000 (different endpoint structure)
+        base_url = "https://api.census.gov/data/2000/dec/pl"
         variables = "P001001,P002002,P002026"  # Total population, Male, Female
-        dataset = f"{year}/dec/pl"
+        dataset = "2000/dec/pl"
+    elif year == 2010:
+        # Use Decennial Census for 2010
+        base_url = "https://api.census.gov/data/2010/dec/pl"
+        variables = "P001001,P002002,P002026"  # Total population, Male, Female
+        dataset = "2010/dec/pl"
+    else:
+        # For other years, use ACS 1-Year estimates
+        base_url = f"https://api.census.gov/data/{year}/acs/acs1"
+        variables = "B01003_001E,B01001_002E,B01001_026E"  # Total population, Male, Female
+        dataset = f"{year}/acs/acs1"
     
     # Build the API request
     url = f"{base_url}"
@@ -137,8 +147,8 @@ def download_all_population_data():
     # Setup directories
     data_dir = setup_directories()
     
-    # Years to download (focusing on key years to avoid rate limits)
-    years = [2000, 2010, 2015, 2020, 2022, 2024]
+    # Years to download (2000-2025, every 2-3 years to avoid rate limits)
+    years = [2000, 2005, 2010, 2012, 2015, 2018, 2020, 2022, 2024]
     
     all_data = []
     
