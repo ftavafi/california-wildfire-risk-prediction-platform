@@ -53,12 +53,74 @@ California faces increasing wildfire threats due to climate change, with devasta
 
 ## 📊 Data Sources
 
-This project integrates multiple public datasets:
+This project integrates multiple public datasets to build a comprehensive wildfire risk prediction model:
 
-- **Historical Fires**: [CAL FIRE](https://frap.fire.ca.gov/) - Fire perimeters and incidents (2000-2024)
-- **Weather Data**: [NOAA API](https://www.weather.gov/documentation/services-web-api) - Temperature, humidity, wind, precipitation
-- **Vegetation**: [NASA MODIS](https://earthdata.nasa.gov/) - Vegetation indices (NDVI)
-- **Topography**: [USGS](https://www.usgs.gov/) - Elevation, slope, terrain data
+### **Datasets Collected ✅**
+
+#### 1. **CAL FIRE Historical Fire Data** (2000-2025)
+- **Source**: [CAL FIRE Fire and Resource Assessment Program (FRAP)](https://frap.fire.ca.gov/)
+- **Coverage**: 20,000+ fire perimeters across California
+- **Key Features**: Fire location, size (acres), year, cause, duration
+- **Format**: Shapefile (GIS), converted to GeoJSON/CSV
+- **Status**: ✅ Downloaded and ingested
+- **Notebook**: `01_fire_data_ingestion.ipynb`
+
+#### 2. **NOAA Weather Data** (2020-2025)
+- **Source**: [NOAA Climate Data Online (CDO) API](https://www.ncei.noaa.gov/cdo-web/)
+- **Coverage**: Daily weather observations from California weather stations
+- **Key Features**: Temperature (min/max), precipitation, wind speed, attributes (snow, fog, thunder)
+- **Format**: JSON → CSV
+- **Status**: ✅ Downloaded (5 years) - Expanding to 2000-2025 in progress
+- **Notebook**: `02_weather_data_ingestion.ipynb`
+
+#### 3. **US Drought Monitor Data** (2000-2025)
+- **Source**: [US Drought Monitor](https://droughtmonitor.unl.edu/)
+- **Coverage**: Weekly drought severity classifications for California
+- **Key Features**: Drought categories (D0-D4), population affected, area percentage
+- **Format**: Shapefile → CSV
+- **Status**: ✅ Downloaded and ingested
+- **Notebook**: `03_drought_data_ingestion.ipynb`
+
+#### 4. **US Census Population Data** (2000-2024)
+- **Source**: [US Census Bureau API](https://www.census.gov/data/developers.html)
+- **Coverage**: California county-level population estimates
+- **Key Features**: Total population, population density, growth rate
+- **Format**: JSON → CSV
+- **Status**: ✅ Downloaded and ingested
+- **Notebook**: `04_population_data_ingestion.ipynb`
+
+### **Datasets Planned 🔄**
+
+#### 5. **NOAA Climate Divisional Data** (2000-2025)
+- **Source**: [NOAA nClimDiv](https://www.ncei.noaa.gov/pub/data/cirs/climdiv/)
+- **Coverage**: Monthly climate data by California climate divisions (1895-present)
+- **Key Features**: Precipitation, temperature (min/max), drought indices
+- **Purpose**: Fill weather data gap (2000-2020) with climate division aggregates
+- **Status**: 🔄 In progress
+
+#### 6. **USGS Elevation/Topography Data**
+- **Source**: [USGS National Map](https://www.usgs.gov/)
+- **Coverage**: California terrain data
+- **Key Features**: Elevation, slope, aspect
+- **Purpose**: Topographic factors affecting fire spread
+- **Status**: ⏳ Pending
+
+#### 7. **NOAA Lightning Strike Data**
+- **Source**: [NOAA GOES Geostationary Lightning Mapper](https://www.ncei.noaa.gov/products/goes-geostationary-lightning-mapper)
+- **Coverage**: Lightning detection across California
+- **Key Features**: Strike location, intensity, timestamp
+- **Purpose**: Natural fire ignition sources
+- **Status**: ⏳ Pending
+
+### **Dataset Summary**
+
+| Dataset | Years | Records | Size | Status |
+|---------|-------|---------|------|--------|
+| CAL FIRE Fires | 2000-2025 | 20,000+ | ~500 MB | ✅ Complete |
+| NOAA Weather | 2020-2025 | 2M+ | ~200 MB | ✅ Partial |
+| Drought Monitor | 2000-2025 | 1,300+ | ~2 GB | ✅ Complete |
+| Census Population | 2000-2024 | ~500 | <1 MB | ✅ Complete |
+| **Total Collected** | - | **2M+** | **~3 GB** | **4/7 datasets** |
 
 All data sources are publicly available and free to access.
 
