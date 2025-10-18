@@ -90,7 +90,7 @@ This project integrates multiple public datasets to build a comprehensive wildfi
 - **Coverage**: All 58 California counties, annual estimates (2000-2025)
 - **Key Features**: Total population by county and year
 - **Format**: Excel (3 files) → Merged CSV
-- **Data Files**: 
+- **Data Files**:
   - E4_2000-2010_Report_Final_EOC_000.xlsx
   - E-4_2010-2020-Internet-Version.xlsx
   - E-4_2025_InternetVersion.xlsx
@@ -99,13 +99,18 @@ This project integrates multiple public datasets to build a comprehensive wildfi
 
 ### **Datasets Planned 🔄**
 
-#### 5. **USGS Elevation/Topography Data**
+#### 5. **SRTM Topography Data** (2000)
 
-- **Source**: [USGS National Map](https://www.usgs.gov/)
-- **Coverage**: California terrain data
-- **Key Features**: Elevation, slope, aspect
-- **Purpose**: Topographic factors affecting fire spread
-- **Status**: ⏳ Pending
+- **Source**: [OpenTopography - SRTM GL1 (30m)](https://portal.opentopography.org/raster?opentopoID=OTSRTM.082015.4326.1)
+- **Coverage**: California (3 regions: Northern, Central, Southern)
+- **Key Features**: Elevation (30m resolution), slope, aspect
+- **Format**: GeoTIFF
+- **Bounding Boxes**:
+  - Northern CA: xmin=-124.5, xmax=-119.5, ymin=39.0, ymax=42.0
+  - Central CA: xmin=-123.0, xmax=-118.0, ymin=35.5, ymax=39.0
+  - Southern CA: xmin=-121.0, xmax=-114.0, ymin=32.5, ymax=35.5
+- **Status**: ✅ Downloaded (awaiting rasterio installation for processing)
+- **Notebook**: `05_topography_data_ingestion.ipynb`
 
 #### 6. **NOAA Lightning Strike Data**
 
@@ -120,12 +125,23 @@ This project integrates multiple public datasets to build a comprehensive wildfi
 | Dataset | Years | Records | Size | Status |
 |---------|-------|---------|------|--------|
 | CAL FIRE Fires | 2000-2025 | 20,000+ | ~500 MB | ✅ Complete |
-| NOAA Climate | 2000-2025 | 300+ | <1 MB | ✅ Complete |
-| Drought Monitor | 2000-2025 | 1,300+ | ~2 GB | ✅ Complete |
-| CA County Population | 2000-2025 | 1,508 | <1 MB | ✅ Complete |
-| **Total Collected** | - | **22,000+** | **~2.5 GB** | **4/6 datasets** |
+| NOAA Climate | 2000-2025 | 308 | <1 MB | ✅ Complete |
+| Drought Monitor | 2000-2025 | 1,345 | ~2 GB | ✅ Complete |
+| CA County Population | 2000-2025 | 1,566 | <1 MB | ✅ Complete |
+| SRTM Topography | 2000 | 3 regions | ~1.2 GB | ✅ Downloaded |
+| **Total Collected** | - | **22,000+** | **~3.7 GB** | **5/6 datasets** |
 
 All data sources are publicly available and free to access.
+
+### **Data Visualization & Exploration**
+
+Each dataset has been thoroughly explored with comprehensive visualizations in Jupyter notebooks:
+
+- **Fire Data (01)**: Fires per year, acres burned trends, size distribution, monthly patterns, top 10 largest fires, cause analysis
+- **Weather Data (02)**: Seasonal temperature patterns, temp vs precipitation correlation, annual trends with trendlines, dry season analysis
+- **Drought Data (03)**: Stacked area charts, severity heatmaps, category distributions, intensity scores, exceptional drought timelines
+- **Population Data (04)**: County growth comparisons, fire-risk county trends, distribution analysis, fastest growing counties
+- **Topography Data (05)**: Elevation maps and histograms (full processing pending rasterio installation)
 
 ## 🚀 Getting Started
 
