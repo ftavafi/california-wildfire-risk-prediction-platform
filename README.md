@@ -84,14 +84,18 @@ This project integrates multiple public datasets to build a comprehensive wildfi
 - **Status**: ✅ Downloaded and ingested
 - **Notebook**: `03_drought_data_ingestion.ipynb`
 
-#### 4. **US Census Population Data** (2000-2024)
+#### 4. **California County Population Data** (2000-2025)
 
-- **Source**: [US Census Bureau API](https://www.census.gov/data/developers.html)
-- **Coverage**: California county-level population estimates
-- **Key Features**: Total population, population density, growth rate
-- **Format**: JSON → CSV
-- **Status**: ✅ Downloaded and ingested
-- **Notebook**: `04_population_data_ingestion.ipynb`
+- **Source**: [CA Department of Finance - E-4 Population Estimates](https://dof.ca.gov/forecasting/demographics/estimates/)
+- **Coverage**: All 58 California counties, annual estimates (2000-2025)
+- **Key Features**: Total population by county and year
+- **Format**: Excel (3 files) → Merged CSV
+- **Data Files**: 
+  - E4_2000-2010_Report_Final_EOC_000.xlsx
+  - E-4_2010-2020-Internet-Version.xlsx
+  - E-4_2025_InternetVersion.xlsx
+- **Status**: ✅ Downloaded, merged, and ingested
+- **Notebook**: `04_population_data_processing.ipynb`
 
 ### **Datasets Planned 🔄**
 
@@ -118,7 +122,7 @@ This project integrates multiple public datasets to build a comprehensive wildfi
 | CAL FIRE Fires | 2000-2025 | 20,000+ | ~500 MB | ✅ Complete |
 | NOAA Climate | 2000-2025 | 300+ | <1 MB | ✅ Complete |
 | Drought Monitor | 2000-2025 | 1,300+ | ~2 GB | ✅ Complete |
-| Census Population | 2000-2024 | ~500 | <1 MB | ✅ Complete |
+| CA County Population | 2000-2025 | 1,508 | <1 MB | ✅ Complete |
 | **Total Collected** | - | **22,000+** | **~2.5 GB** | **4/6 datasets** |
 
 All data sources are publicly available and free to access.
